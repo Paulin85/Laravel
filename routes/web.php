@@ -27,5 +27,6 @@ Route::get('/entreprises/{id}/show', 'EntrepriseController@show')->name('entrepr
 
 Route::get('/users', 'UserController@index')->name('users.index');
 Route::get('/users/create', 'UserController@create')->name('users.create');
+Route::get('/users/update', 'UserController@update')->name('users.update');
 Route::post('/users/store', 'UserController@store')->name('users.store');
 Route::get('/users/show/{id}', 'UserController@show')->name('users.show');
