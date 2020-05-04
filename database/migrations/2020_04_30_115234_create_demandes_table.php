@@ -14,10 +14,10 @@ class CreateDemandesTable extends Migration
     public function up()
     {
         Schema::create('demandes', function (Blueprint $table) {
-            $table->String('id');
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->String('Date');
-            $table->String('Numéro');
+            $table->String('Numero');
             $table->String('Nom');
         });
     }

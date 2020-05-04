@@ -22,9 +22,9 @@ class DemandesController extends Controller
     public function store(Request $request)
     {
         $demandes = new Demandes();
-        $demandes->nom = $request->get('Nom');
-        $demandes->adresse = $request->get('Adresse');
-        $demandes->numero = $request->get('Numero');
+        $demandes->Nom = $request->get('Nom');
+        $demandes->Numero = $request->get('Numero');
+        $demandes->Date = $request->get('Date');
         $demandes->save();
         return redirect()->route('demandes.index');
     }
@@ -34,4 +34,9 @@ class DemandesController extends Controller
         $demandes = Demandes::where('id', $demandesId)->first();
         return view('demandes.show', compact('demandes'));
     }
+
+    public function destroy($id) {
+        $demandes = Demandes::where('id',$id)->delete();
+        return redirect()->route('demandes.index');
+     }
 }
