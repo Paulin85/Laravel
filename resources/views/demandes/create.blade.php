@@ -4,18 +4,15 @@
 <body>
     <h1>Ajouter une demande</h1>
 
-    <form method="POST" action="{{ route('entreprises.store') }}">
+    <form method="POST" action="{{ route('demandes.store') }}">
 
         @csrf
 
         <label for="Nom">Nom de la demande:</label>
         <input id="Nom" type="text" name="Nom">
 
-        <label for="Domaine">Domaine de Travail de la demande:</label>
-        <input id="Domaine" type="text" name="Domaine">
-
-        <label for="Adresse">Adresse de la demande:</label>
-        <input id="Adresse" type="text" name="Adresse">
+        <label for="Date">Date de la demande:</label>
+        <input id="Date" type="text" name="Date">
 
         <label for="Numero">Numéro de Téléphone de la demande:</label>
         <input id="Numero" type="text" name="Numero">

@@ -8,15 +8,14 @@
 
     <a href="{{ route('demandes.index') }}">Retour a l'accueil</a>
     <p>
-    @if(!is_null($entreprise))
+    @if(!is_null($demandes))
         {{ $demandes->Nom }}
-        {{ $demandes->Domaine }}
-        {{ $demandes->Adresse }}
+        {{ $demandes->Date }}
         {{ $demandes->Numero }}
     </p>
     @else
         <p>La catégorie n'existe pas</p>
     @endif
-
+    <td><a href ="{{ route('demandes.destroy', $demandes->id) }}">Delete</a></td>
 </body>
 </html>

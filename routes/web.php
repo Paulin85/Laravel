@@ -28,6 +28,7 @@ Route::get('/demandes', 'DemandesController@index')->name('demandes.index');
 Route::get('/demandes/create', 'DemandesController@create')->name('demandes.create');
 Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
 Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
+Route::get('/demandes/delete/{id}','DemandesController@destroy')->name('demandes.destroy');
 
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::post('/users/store', 'UserController@store')->name('users.store');
