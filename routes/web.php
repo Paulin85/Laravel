@@ -24,6 +24,10 @@ Route::get('/entreprises/create', 'EntrepriseController@create')->name('entrepri
 Route::post('/entreprises/store', 'EntrepriseController@store')->name('entreprises.store');
 Route::get('/entreprises/{id}/show', 'EntrepriseController@show')->name('entreprises.show');
 
+Route::get('/demandes', 'DemandesController@index')->name('demandes.index');
+Route::get('/demandes/create', 'DemandesController@create')->name('demandes.create');
+Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
+Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
 
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::post('/users/store', 'UserController@store')->name('users.store');
