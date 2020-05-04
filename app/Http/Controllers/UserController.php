@@ -41,20 +41,37 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
 
-    public function update(Request $request, $id) {
-        $this -> validate($request, [
-            'name' => 'required',
-            'surname' => 'required',
-            'email' => 'required',
-            'password' => 'required'
-        ]);
-        $users = User::find($id);
-        $users->name =$request->get('name');
-        $users->surname =$request->get('surname');
-        $users->email =$request->get('email');
-        $users->password =$request->get('password');
 
-        $users->save;
-        return redirect()->route('users.create')->with('success','Data Updated');
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('users.edit', compact('user', 'id'));
     }
+
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name'    =>  'required',
+            'surname'     =>  'required',
+            'email' => 'required'
+        ]);
+        $user = User::find($id);
+        $user->name = $request->get('name');
+        $user->surname = $request->get('surname');
+        $user->email = $request->get('email');
+        $user->save();
+        return redirect()->route('users.index')->with('success', 'User Updated');
+    }
+
+    public function destroy($id)
+
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index')->with('success', 'Data Deleted');
+
+    }
+
+
 }
