@@ -31,7 +31,7 @@ class UserController extends Controller
         $user->email_verified_at = $request->get('email_verified_at');
 
         $user->save();
-        return redirect()->route('users.show');
+        return redirect()->route('users.show/{id}');
     }
 
     public function show($userid)

@@ -26,6 +26,9 @@
                             <input type="text" name="surname" class="form-control" value="{{$user->surname}}" placeholder="Enter Last Name" />
                         </div>
                         <div class="form-group">
+                            <input type="text" name="email" class="form-control" value="{{$user->email}}" placeholder="Enter Email" />
+                        </div>
+                        <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Edit" />
 
                         </div>
