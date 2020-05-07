@@ -26,8 +26,12 @@ Route::get('/entreprises/{id}/show', 'EntrepriseController@show')->name('entrepr
 
 
 Route::get('/users/create', 'UserController@create')->name('users.create');
-
+Route::get('/register', 'UserController@create')->name('users.create');
+Route::get('/users', 'UserController@index')->name('users.index');
 Route::post('/users/store', 'UserController@store')->name('users.store');
 Route::get('/users/show', 'UserController@show')->name('users.show');
 
 Route::resource('users', 'UserController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

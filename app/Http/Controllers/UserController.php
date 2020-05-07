@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 use App\User;
+use Symfony\Component\CssSelector\Parser\Handler\HashHandler;
 
 class UserController extends Controller
 {
@@ -69,7 +70,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('user.index')->with('success', 'Data Deleted');
+        return redirect()->route('users.index')->with('success', 'Data Deleted');
 
     }
 
