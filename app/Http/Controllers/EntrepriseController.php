@@ -35,4 +35,15 @@ class EntrepriseController extends Controller
         $entreprise = Entreprise::where('id', $entrepriseId)->first();
         return view('entreprises.show', compact('entreprise'));
     }
+
+    public function destroy($id) {
+        $entreprises = Entreprise::where('id',$id)->delete();
+        return redirect()->route('entreprises.index');
+     }
+
+    public function modification($entrepriseId)
+    {
+        $entreprise = Entreprise::where('id', $entrepriseId)->first();
+        return view('entreprises.modification', compact('entreprises'));
+    }
 }
