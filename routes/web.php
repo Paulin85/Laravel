@@ -23,6 +23,8 @@ Route::get('/entreprises', 'EntrepriseController@index')->name('entreprises.inde
 Route::get('/entreprises/create', 'EntrepriseController@create')->name('entreprises.create');
 Route::post('/entreprises/store', 'EntrepriseController@store')->name('entreprises.store');
 Route::get('/entreprises/{id}/show', 'EntrepriseController@show')->name('entreprises.show');
+Route::get('/entreprises/{id}/modification', 'EntrepriseController@modification')->name('entreprises.modification');
+Route::get('/entreprises/delete/{id}','EntrepriseController@destroy')->name('entreprises.destroy');
 
 
 Route::get('/users/create', 'UserController@create')->name('users.create');

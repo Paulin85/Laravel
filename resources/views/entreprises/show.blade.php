@@ -18,5 +18,7 @@
         <p>La catégorie n'existe pas</p>
     @endif
 
+    <td><a href ="{{ route('entreprises.destroy', $entreprise->id) }}">Delete</a></td>
+    <a href="{{ route('entreprises.modification', $entreprise->id) }}">Modifier l'entreprise</a>
 </body>
 </html>
