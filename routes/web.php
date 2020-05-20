@@ -23,10 +23,17 @@ Route::get('/entreprises', 'EntrepriseController@index')->name('entreprises.inde
 Route::get('/entreprises/create', 'EntrepriseController@create')->name('entreprises.create');
 Route::post('/entreprises/store', 'EntrepriseController@store')->name('entreprises.store');
 Route::get('/entreprises/{id}/show', 'EntrepriseController@show')->name('entreprises.show');
-Route::get('/entreprises/{id}/modification', 'EntrepriseController@modification')->name('entreprises.modification');
 Route::get('/entreprises/delete/{id}','EntrepriseController@destroy')->name('entreprises.destroy');
+Route::get('/entreprises/edit/{entreprise}','EntrepriseController@edit')->name('entreprises.edit');
+Route::put('/entreprises/edit/{entreprise}','EntrepriseController@update')->name('entreprises.update');
 
 
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::post('/users/store', 'UserController@store')->name('users.store');
 Route::get('/users/show', 'UserController@show')->name('users.show');
+
+Route::get('/contacts', 'ContactController@index')->name('contacts.index');
+Route::get('/contacts/{id}/show', 'ContactController@show')->name('contacts.show');
+Route::get('/contacts/create', 'ContactController@create')->name('contacts.create');
+Route::post('/contacts/store', 'ContactController@store')->name('contacts.store');
+Route::get('/contacts/delete/{id}','ContactController@destroy')->name('contacts.destroy');
