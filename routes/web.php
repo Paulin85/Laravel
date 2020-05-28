@@ -32,6 +32,8 @@ Route::get('/demandes/create', 'DemandesController@create')->name('demandes.crea
 Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
 Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
 Route::get('/demandes/delete/{id}','DemandesController@destroy')->name('demandes.destroy');
+Route::get('/demandes/edit/{demande}','DemandesController@edit')->name('demandes.edit');
+Route::put('/demandes/edit/{demande}','DemandesController@update')->name('demandes.update');
 
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::get('/register', 'UserController@create')->name('users.create');
