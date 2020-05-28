@@ -49,4 +49,4 @@ Route::put('/contacts/edit/{contact}','ContactController@update')->name('contact
 Route::resource('users', 'UserController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home')->name('home');

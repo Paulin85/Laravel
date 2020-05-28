@@ -81,18 +81,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Application de gestion de demandes de stages
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#">Demandes</a>
+                    <a href="#">Users</a>
+                    <a href="#">Entreprises</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Historique</a>
+                    <a href="#">Badge</a>
+
                 </div>
             </div>
         </div>
