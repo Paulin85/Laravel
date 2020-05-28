@@ -10,11 +10,11 @@ class Contact extends Model
     
     public $timestamps = false;
 
-    protected $fillable=['Nom', 'Prenom', 'Mail', 'Numero', 'Entreprise', 'entreprises_id'];
+    protected $fillable=['Nom', 'Prenom', 'Mail', 'Numero', 'entreprise_id'];
 
-    public function entreprises()
-    {
-        return $this->hasMany(Contact::class, "entreprises_id");
-    }
+    public function entreprise()
+        { 
+            return $this->belongsTo(Entreprise::class); 
+        }
 
 }

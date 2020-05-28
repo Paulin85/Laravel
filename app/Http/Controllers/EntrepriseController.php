@@ -53,4 +53,5 @@ class EntrepriseController extends Controller
         $entreprise->save();
         return redirect()->route('entreprises.index');
     }
+
 }

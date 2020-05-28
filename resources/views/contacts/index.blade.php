@@ -8,6 +8,15 @@
 <body>
     <h1>Index des Contacts</h1>
 
+    <div class="select">
+            <select onchange="window.location.href = this.value">
+                <option value="{{ route('contacts.index') }}" @unless($slug) selected @endunless>Toutes entreprises</option>
+                @foreach($entreprises as $entreprise)
+                    <option value="{{ route('contacts.entreprise', $entreprise->slug) }}" {{ $slug = $entreprise->slug ? 'selected' : '' }}>{{ $entreprise->Nom }}</option>
+                @endforeach
+            </select>
+        </div>
+
 
     <div class="container">
         <div class="row">
@@ -36,7 +45,6 @@
                                 <td>{{$contact['Mail']}}</td>
                                 <td>{{$contact['Numero']}}</td>
                                 <td>{{$contact['Entreprise']}}</td>
-                               <td></td>
                             </tr>
                             @endforeach
                     </tbody>
@@ -46,6 +54,7 @@
             </div>
         </div>
     </div>
+
 
 </body>
 </html>

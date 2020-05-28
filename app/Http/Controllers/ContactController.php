@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Contact;
+use App\{Contact, Entreprise};
 
 class ContactController extends Controller
 {
-    public function index()
-    {
-        $contacts = Contact::all();
-        return view('contacts.index', compact('contacts'));
-    }
+
+    public function index($slug = null)
+{
+    $contacts = Contact::all();
+    $query = $slug ? Entreprise::whereSlug($slug)->firstOrFail()->contacts() : Contact::query();
+    $entreprises = Entreprise::all();
+    return view('contacts.index', compact('contacts', 'entreprises', 'slug'));
+}
     //
     public function create()
     {
@@ -32,11 +35,14 @@ class ContactController extends Controller
         return redirect()->route('contacts.index');
     }
 
+
+
     public function show($contactId)
-    {
-        $contact = Contact::where('id', $contactId)->first();
-        return view('contacts.show', compact('contact'));
-    }
+{
+    $contact = Contact::where('id', $contactId)->first();
+    $entreprise = $contact->entreprise->Nom;
+    return view('contacts.show', compact('contact', 'entreprise'));
+}
 
     public function destroy($id) {
         $contact = Contact::where('id',$id)->delete();
@@ -54,8 +60,6 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->route('contacts.index');
     }
-
-
 
 
 }
