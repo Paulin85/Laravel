@@ -12,4 +12,9 @@ class Entreprise extends Model
     public $timestamps = false;
 
     protected $fillable=['Nom', 'Domaine', 'Adresse', 'Numero'];
+
+    public function contacts()
+    {
+        return $this->belongsTo(Entreprise::class);
+    }
 }

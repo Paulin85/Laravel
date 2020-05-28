@@ -43,6 +43,19 @@ class ContactController extends Controller
         return redirect()->route('contacts.index');
      }
 
+     public function edit(Contact $contact)
+    {
+        return view('contacts.edit', compact('contact'));
+    }
+
+    public function update(Request $request, Contact $contact)
+    {
+        $contact->update($request->all());
+        $contact->save();
+        return redirect()->route('contacts.index');
+    }
+
+
 
 
 }
