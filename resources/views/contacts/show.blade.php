@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Affichage d'une entreprise</title>
+    <title>Affichage d'un contact</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 </head>
 <body>
-    <h1>{{ $entreprise->Nom }}</h1>
+    <h1>{{ $contact->Nom }}</h1>
 
 
     <div class="container">
         <div class="row">
             <div class="col-2 offset-10">
-                <a href="{{ route('entreprises.index') }}" class="btn btn-info">Retour a l'accueil</a>
+                <a href="{{ route('contacts.index') }}" class="btn btn-info">Retour a l'accueil</a>
             </div>
         </div>
         <div class="row">
@@ -21,23 +21,23 @@
                     <thead>
                     <tr>
                         <th>Nom</th>
-                        <th>Domaine</th>
-                        <th>Adresse</th>
+                        <th>Prénom</th>
+                        <th>Mail</th>
                         <th>Numéro</th>
                         <th>Modifier</th>
                         <th>Supprimer</th>
-                        <th>Contact</th>
+                        <th>Entreprise</th>
                     </tr>
                     </thead>
                     <tbody>
                             <tr>
-                                <td>{{$entreprise['Nom']}}</td>
-                                <td>{{$entreprise['Domaine']}}</td>
-                                <td>{{$entreprise['Adresse']}}</td>
-                                <td>{{$entreprise['Numero']}}</td>
-                                <td> <a class="btn btn-warning" href="{{ route('entreprises.edit', $entreprise) }}">Modifier</a> </td>
-                                <td> <a class="btn btn-danger" href="{{ route('entreprises.destroy', $entreprise) }}">Supprimer</a> </td>
-                                <td> <a class="btn btn-success" href="{{ route('contacts.index') }}">Contact</a> </td>
+                                <td>{{$contact['Nom']}}</td>
+                                <td>{{$contact['Prenom']}}</td>
+                                <td>{{$contact['Mail']}}</td>
+                                <td>{{$contact['Numero']}}</td>
+                                <td> <a class="btn btn-warning" href="{{ route('contacts.edit', $contact) }}">Modifier</a> </td>
+                                <td> <a class="btn btn-danger" href="{{ route('contacts.destroy', $contact) }}">Supprimer</a> </td>
+                                <td> <a class="btn btn-success" href="{{ route('entreprises.index') }}">Entreprise</a> </td>
                             </tr>
                     </tbody>
 
