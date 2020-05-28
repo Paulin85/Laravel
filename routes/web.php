@@ -48,5 +48,5 @@ Route::get('/contacts/edit/{contact}','ContactController@edit')->name('contacts.
 Route::put('/contacts/edit/{contact}','ContactController@update')->name('contacts.update');
 Route::resource('users', 'UserController');
 Auth::routes();
-
+Route::post('register', 'Auth\RegisterController@register');
 Route::get('/home')->name('home');

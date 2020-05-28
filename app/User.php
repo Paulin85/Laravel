@@ -44,6 +44,14 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($value);
     }
 
+    public function generateToken()
+    {
+        $this->api_token = str_random(60);
+        $this->save();
+
+        return $this->api_token;
+    }
+
 
     protected $casts = [
         'email_verified_at' => 'datetime',
