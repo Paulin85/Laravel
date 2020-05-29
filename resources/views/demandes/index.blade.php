@@ -31,12 +31,12 @@
 
                         <tr>
                             <td><a href="{{ route('demandes.show', $demande->id) }}" title="{{ $demande->Nom }}">{{ $demande->Nom }}</a>
+                            
                             <td>{{$demande['Prenom']}}</td>
-                            <td>{{$demande['Nom']}}</td>
+                                <td>{{$demande['Entreprise']}}</td>
                                 <td>{{$demande['Mail']}}</td>
                                 <td>{{$demande['Numero']}}</td>
                                 <td>{{$demande['Date']}}</td>
-                                <td>{{$demande['Entreprise']}}</td>
                             <td></td>
                             </tr>
                             @endforeach
