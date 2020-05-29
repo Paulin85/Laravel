@@ -10,5 +10,12 @@ class demandes extends Model
     
     public $timestamps = false;
 
-    protected $fillable=['Nom', 'Adresse', 'Numero'];
+    protected $fillable=['Nom', 'Prenom', 'Entreprise',  'Mail', 'Numero', 'Date'];
+
+    public function entreprises()
+    {
+        return $thishasMany(Demande::class, "entreprises_id");
+    }
+
 }
+

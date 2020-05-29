@@ -1,24 +1,48 @@
+<!DOCTYPE html>
+<html>
 <head>
-	<title>Ajout d'une demande</title>
+    <title>Ajouter une demande</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 <body>
     <h1>Ajouter une demande</h1>
 
-    <form method="POST" action="{{ route('demandes.store') }}">
 
-        @csrf
-
-        <label for="Nom">Nom de la demande:</label>
-        <input id="Nom" type="text" name="Nom">
-
-        <label for="Date">Date de la demande:</label>
-        <input id="Date" type="text" name="Date">
-
-        <label for="Numero">Numéro de Téléphone de la demande:</label>
-        <input id="Numero" type="text" name="Numero">
-
-        <input type="submit">
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form action="{{ route('demandes.store') }}" method="post">
+                    <div class="form-group">
+                        <label for="Nom">Nom</label>
+                        <input type="text" name="Nom" id="Nom" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Prenom">Prénom</label>
+                        <input type="text" name="Prenom" id="Prenom" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Enreprise">Entreprise</label>
+                        <input type="text" name="Entreprise" id="Entreprise" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Mail">Adresse mail</label>
+                        <input type="Mail" name="Mail" id="Adresse" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Numero">Numéro de Téléphone</label>
+                        <input type="text" name="Numero" id="Numero" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input type="text" name="Date" id="Date" class="form-control" required>
+                    </div>
+                    @csrf()
+                    <input type="submit" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

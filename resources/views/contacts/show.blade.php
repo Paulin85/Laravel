@@ -6,7 +6,7 @@
 
 </head>
 <body>
-    <h1>{{ $contact->Nom }}</h1>
+    <h1>Page du Contact</h1>
 
 
     <div class="container">
@@ -37,7 +37,7 @@
                                 <td>{{$contact['Numero']}}</td>
                                 <td> <a class="btn btn-warning" href="{{ route('contacts.edit', $contact) }}">Modifier</a> </td>
                                 <td> <a class="btn btn-danger" href="{{ route('contacts.destroy', $contact) }}">Supprimer</a> </td>
-                                <td> <a class="btn btn-success" href="{{ route('entreprises.index') }}">Entreprise</a> </td>
+                                <td> {{ $entreprise }} </td>
                             </tr>
                     </tbody>
 

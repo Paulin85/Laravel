@@ -13,19 +13,23 @@ class CreateContactTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('contact', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Nom');
             $table->string('Prenom');
             $table->string('Mail');
             $table->string('Numero');
-            $table->string('Entreprise');
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->bigInteger('entreprises_id')->unsigned()->nullable();
-            $table->foreign('entreprises_id') 
+            $table->unsignedBigInteger('entreprise_id');
+            $table->foreign('entreprise_id')
                 ->references('id')
-                ->on('entreprises');
+                ->on('entreprises')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+
             
         });
     }

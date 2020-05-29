@@ -29,10 +29,17 @@
                         <label for="Numero">Numéro du contact</label>
                         <input type="text" name="Numero" id="Numero" class="form-control" required>
                     </div>
-		<div class="form-group">
-                        <label for="Entreprise">Entreprise du contact</label>
-                        <input type="text" name="Entreprise" id="Entreprise" class="form-control" required>
+                    <div class="field">
+                        <label class="label">Entreprise</label>
+                        <div class="select">
+                            <select name="entreprise_id">
+                                @foreach($entreprises as $entreprise)
+                                    <option value="{{ $entreprise->id }}">{{ $entreprise->Nom }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
+
                     @csrf()
                     <input type="submit" class="btn btn-success">
                 </form>

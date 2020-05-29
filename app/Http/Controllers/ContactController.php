@@ -4,19 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Contact;
+use App\{Contact, Entreprise};
 
 class ContactController extends Controller
 {
-    public function index()
-    {
-        $contacts = Contact::all();
-        return view('contacts.index', compact('contacts'));
-    }
+
+    public function index($Nom = null)
+{
+    $query = $Nom ? Entreprise::whereNom($Nom)->firstOrFail()->contacts() : Contact::query();
+    $contacts = $query->withTrashed()->oldest('Nom')->paginate(20);
+    $entreprises = Entreprise::all();
+    return view('contacts.index', compact('contacts', 'entreprises', 'Nom'));
+}
     //
     public function create()
     {
-        return view('contacts.create');
+        $entreprises = Entreprise::all();
+        return view('contacts.create', compact('entreprises'));
     }
 
     public function store(Request $request)
@@ -26,17 +30,20 @@ class ContactController extends Controller
         $contact->prenom = $request->get('Prenom');
         $contact->mail = $request->get('Mail');
         $contact->numero = $request->get('Numero');
-        $contact->entreprise = $request->get('Entreprise');
+        $contact->entreprise_id = $request->get('entreprise_id');
 
         $contact->save();
         return redirect()->route('contacts.index');
     }
 
+
+
     public function show($contactId)
-    {
-        $contact = Contact::where('id', $contactId)->first();
-        return view('contacts.show', compact('contact'));
-    }
+{
+    $contact = Contact::where('id', $contactId)->first();
+    $entreprise = $contact->entreprise->Nom;
+    return view('contacts.show', compact('contact', 'entreprise'));
+}
 
     public function destroy($id) {
         $contact = Contact::where('id',$id)->delete();
@@ -54,8 +61,6 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->route('contacts.index');
     }
-
-
 
 
 }
