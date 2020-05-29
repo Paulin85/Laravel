@@ -49,4 +49,7 @@ Route::put('/contacts/edit/{contact}','ContactController@update')->name('contact
 Route::resource('users', 'UserController');
 Auth::routes();
 Route::post('register', 'Auth\RegisterController@register');
-Route::get('/home')->name('home');
+
+// API Route
+
+Route::get('/api/test', function (Request $request) {return 'Status : Ok';});

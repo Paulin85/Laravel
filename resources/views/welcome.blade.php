@@ -85,10 +85,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Demandes</a>
-                    <a href="#">Users</a>
-                    <a href="#">Entreprises</a>
-                    <a href="#">Contacts</a>
+                    <a href='/demandes'>Demandes</a>
+                    <a href="/users">Users</a>
+                    <a href="/entreprises">Entreprises</a>
+                    <a href="/contacts">Contacts</a>
                     <a href="#">Historique</a>
                     <a href="#">Badge</a>
 

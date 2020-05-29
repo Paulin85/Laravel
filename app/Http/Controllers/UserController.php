@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use Illuminate\Support\Str;
 use Symfony\Component\CssSelector\Parser\Handler\HashHandler;
 
 class UserController extends Controller
@@ -30,6 +31,7 @@ class UserController extends Controller
         $user->password = $request->get('password');
         //$user->badge = $request->get('badge');
         $user->email_verified_at = $request->get('email_verified_at');
+        $user->api_token = Str::uuid();
 
         $user->save();
         return redirect()->route('users.index');
