@@ -14,6 +14,9 @@
             <div class="col-2 offset-10">
                 <a href="{{ route('entreprises.create') }}" class="btn btn-info">Création d'une entreprise</a>
             </div>
+            <div class="col-2 offset-10">
+                <a href="{{ route('contacts.index') }}" class="btn btn-info">Liste des contacts</a>
+            </div>
         </div>
         <div class="row">
             <div class="col-8 offset-2">

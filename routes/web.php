@@ -27,11 +27,13 @@ Route::get('/entreprises/delete/{id}','EntrepriseController@destroy')->name('ent
 Route::get('/entreprises/edit/{entreprise}','EntrepriseController@edit')->name('entreprises.edit');
 Route::put('/entreprises/edit/{entreprise}','EntrepriseController@update')->name('entreprises.update');
 
+Route::get('entreprises/{Nom}/contacts', 'ContactController@index')->name('contacts.entreprise');
 Route::get('/demandes', 'DemandesController@index')->name('demandes.index');
 Route::get('/demandes/create', 'DemandesController@create')->name('demandes.create');
 Route::post('/demandes/store', 'DemandesController@store')->name('demandes.store');
 Route::get('/demandes/{id}/show', 'DemandesController@show')->name('demandes.show');
 Route::get('/demandes/delete/{id}','DemandesController@destroy')->name('demandes.destroy');
+
 
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::get('/register', 'UserController@create')->name('users.create');
@@ -46,6 +48,8 @@ Route::post('/contacts/store', 'ContactController@store')->name('contacts.store'
 Route::get('/contacts/delete/{id}','ContactController@destroy')->name('contacts.destroy');
 Route::get('/contacts/edit/{contact}','ContactController@edit')->name('contacts.edit');
 Route::put('/contacts/edit/{contact}','ContactController@update')->name('contacts.update');
+
+
 Route::resource('users', 'UserController');
 Auth::routes();
 
