@@ -16,6 +16,5 @@ $factory->define(Entreprise::class, function (Faker $faker) {
         'Domaine' => $Domaine,
         'Adresse' => $Adresse,
         'Numero' => $Numero, 
-        'slug' => Str::slug($Nom),  
     ];
 });

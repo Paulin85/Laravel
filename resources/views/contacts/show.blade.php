@@ -6,7 +6,7 @@
 
 </head>
 <body>
-    <h1>{{ $contact->Nom }}</h1>
+    <h1>Page du Contact</h1>
 
 
     <div class="container">

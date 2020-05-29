@@ -27,7 +27,7 @@ Route::get('/entreprises/delete/{id}','EntrepriseController@destroy')->name('ent
 Route::get('/entreprises/edit/{entreprise}','EntrepriseController@edit')->name('entreprises.edit');
 Route::put('/entreprises/edit/{entreprise}','EntrepriseController@update')->name('entreprises.update');
 
-Route::get('entreprises/{slug}/contacts', 'ContactController@index')->name('contacts.entreprise');
+Route::get('entreprises/{Nom}/contacts', 'ContactController@index')->name('contacts.entreprise');
 
 
 Route::get('/users/create', 'UserController@create')->name('users.create');

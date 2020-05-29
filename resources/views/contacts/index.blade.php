@@ -10,9 +10,9 @@
 
     <div class="select">
             <select onchange="window.location.href = this.value">
-                <option value="{{ route('contacts.index') }}" @unless($slug) selected @endunless>Toutes entreprises</option>
+                <option value="{{ route('contacts.index') }}" @unless($Nom) selected @endunless>Toutes entreprises</option>
                 @foreach($entreprises as $entreprise)
-                    <option value="{{ route('contacts.entreprise', $entreprise->slug) }}" {{ $slug = $entreprise->slug ? 'selected' : '' }}>{{ $entreprise->Nom }}</option>
+                    <option value="{{ route('contacts.entreprise', $entreprise->Nom) }}" {{ $Nom == $entreprise->Nom ? 'selected' : '' }}>{{ $entreprise->Nom }}</option>
                 @endforeach
             </select>
         </div>
@@ -22,6 +22,9 @@
         <div class="row">
             <div class="col-2 offset-10">
                 <a href="{{ route('contacts.create') }}" class="btn btn-info">Création d'un contact</a>
+            </div>
+            <div class="col-2 offset-10">
+                <a href="{{ route('entreprises.index') }}" class="btn btn-info">Liste des entreprises</a>
             </div>
         </div>
         <div class="row">
@@ -44,9 +47,14 @@
                                 <td>{{$contact['Prenom']}}</td>
                                 <td>{{$contact['Mail']}}</td>
                                 <td>{{$contact['Numero']}}</td>
-                                <td>{{$contact['Entreprise']}}</td>
+
+                                @foreach($entreprises as $entreprise)
+                                    @if($entreprise->id == $contact->entreprise_id)                                    
+                                    <td>{{ $entreprise->Nom }}</td>                                        
+                                    @endif 
+                                @endforeach
+                        @endforeach
                             </tr>
-                            @endforeach
                     </tbody>
 
                 </table>

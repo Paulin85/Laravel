@@ -21,6 +21,7 @@ class CreateContactTable extends Migration
             $table->string('Mail');
             $table->string('Numero');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->unsignedBigInteger('entreprise_id');
             $table->foreign('entreprise_id')

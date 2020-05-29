@@ -20,8 +20,6 @@ class CreateEntreprisesTable extends Migration
             $table->string('Adresse');
             $table->string('Numero');
             $table->timestamps();
-            $table->string('slug');
-
         });
     }
 
