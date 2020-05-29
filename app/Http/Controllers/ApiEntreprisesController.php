@@ -15,4 +15,18 @@ class ApiEntreprisesController extends Controller
             'entreprises' => $entreprises
         ]);
     }
+
+    public function detail()
+    {
+        $entreprises = Entreprise::all();
+        # SELECT * FROM bidules
+        return response()->json([
+            'entreprises' => $entreprises
+        ]);
+    }
+
+
+    public function user(){
+        
+    }
 }
