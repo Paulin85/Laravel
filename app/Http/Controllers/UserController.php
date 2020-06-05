@@ -76,5 +76,11 @@ class UserController extends Controller
 
     }
 
+    public function logout () {
+        //logout user
+        auth()->logout();
+        // redirect to homepage
+        return redirect('/');
+    }
 
 }
