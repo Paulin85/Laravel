@@ -41,7 +41,7 @@
                     </div>
 
                     @csrf()
-                    <input type="submit" class="btn btn-success">
+                    <input type="submit" class="btn btn-success mt-1">
                 </form>
             </div>
         </div>

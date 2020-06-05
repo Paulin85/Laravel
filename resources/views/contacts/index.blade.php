@@ -23,7 +23,7 @@
             <div class="col-2 offset-10">
                 <a href="{{ route('contacts.create') }}" class="btn btn-info">Création d'un contact</a>
             </div>
-            <div class="col-2 offset-10">
+            <div class="col-2 offset-10 mt-1">
                 <a href="{{ route('entreprises.index') }}" class="btn btn-info">Liste des entreprises</a>
             </div>
         </div>
