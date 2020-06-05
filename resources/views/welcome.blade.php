@@ -90,7 +90,7 @@
                     <a href="/entreprises">Entreprises</a>
                     <a href="/contacts">Contacts</a>
                     <a href="#">Historique</a>
-                    <a href="#">Badge</a>
+                    <a href="#">API</a>
 
                 </div>
             </div>
