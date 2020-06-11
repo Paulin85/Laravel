@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Date">Date</label>
-                        <input type="text" name="Date" id="Date" class="form-control" required>
+                        <input type="date" name="Date" id="Date" class="form-control" required>
                     </div>
                     @csrf()
                     <input type="submit" class="btn btn-success">

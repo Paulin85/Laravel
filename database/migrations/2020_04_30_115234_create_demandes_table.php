@@ -22,6 +22,7 @@ class CreateDemandesTable extends Migration
             $table->String('Prenom');
             $table->String('Entreprise');
             $table->String('Mail');
+        
         });
     }
 

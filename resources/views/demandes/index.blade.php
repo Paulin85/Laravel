@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index des Demandes</title>
+	<title>Historique des Demandes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Index des Demandes</h1>
+    <h1>Historique des Demandes</h1>
 
     <div class="cointainer">
         <div class="row">
@@ -27,7 +27,7 @@
                         </tr>
                         </thread>
                         <tbody>
-                        @foreach($demandes as $demande)
+                        @foreach($demandes->sortBy('Date') as $demande)
 
                         <tr>
                             <td><a href="{{ route('demandes.show', $demande->id) }}" title="{{ $demande->Nom }}">{{ $demande->Nom }}</a>

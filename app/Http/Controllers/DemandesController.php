@@ -11,7 +11,10 @@ class DemandesController extends Controller
     public function index()
     {
         $demandes = Demandes::all();
+
         return view('demandes.index', compact('demandes'));
+        
+        
     }
 
     public function create()
