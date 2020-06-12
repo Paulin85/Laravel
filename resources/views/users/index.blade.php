@@ -22,6 +22,7 @@
                     <th>First Name</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Api_Token</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -30,6 +31,8 @@
                         <td>{{$row['name']}}</td>
                         <td>{{$row['surname']}}</td>
                         <td>{{$row['email']}}</td>
+                        <td>{{$row['api_token']}}</td>
+
                         <td><a href="{{action('UserController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>
                         <td>
                             <form method="post" class="delete_form" action="{{action('UserController@destroy', $row['id'])}}">

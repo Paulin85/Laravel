@@ -40,6 +40,7 @@ Route::put('/demandes/edit/{demande}','DemandesController@update')->name('demand
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::get('/register', 'UserController@create')->name('users.create');
 Route::get('/users', 'UserController@index')->name('users.index');
+
 Route::post('/users/store', 'UserController@store')->name('users.store');
 Route::get('/users/show', 'UserController@show')->name('users.show');
 
@@ -53,6 +54,7 @@ Route::put('/contacts/edit/{contact}','ContactController@update')->name('contact
 
 
 Route::resource('users', 'UserController');
+
 Auth::routes();
 Route::post('register', 'Auth\RegisterController@register');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -60,3 +62,7 @@ Route::get('/logout', 'UserController@logout');
 // API Route
 
 Route::get('/api/test', function (Request $request) {return 'Status : Ok';});
+
+Route::get('/api/', function () {
+    return view('api/api');
+});

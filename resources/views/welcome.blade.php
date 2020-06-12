@@ -89,7 +89,6 @@
                     <a href="/users">Users</a>
                     <a href="/entreprises">Entreprises</a>
                     <a href="/contacts">Contacts</a>
-                    <a href="#">Historique</a>
                     <a href="#">API</a>
 
                 </div>
