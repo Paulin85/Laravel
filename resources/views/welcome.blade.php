@@ -45,7 +45,8 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 80px;
+
             }
 
             .links > a {
@@ -81,12 +82,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Application de gestion de demandes de stages
+                   AlterBeer
                 </div>
+                <h2> -  Application de gestion de demandes de stages en alternance - </h2>
 
                 <div class="links">
                     <a href='/demandes'>Demandes</a>
-                    <a href="/users">Users</a>
+                    <a href="/users">Utilisateurs</a>
                     <a href="/entreprises">Entreprises</a>
                     <a href="/contacts">Contacts</a>
                     <a href="api">API</a>

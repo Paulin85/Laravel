@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <br />
-            <h3 align="center">Users Data</h3>
+            <h3 align="center">Index utilisateurs</h3>
             <br />
             @if($message = Session::get('success'))
                 <div class="alert alert-success">
@@ -13,18 +13,18 @@
                 </div>
             @endif
             <div align="right">
-                <a href="{{route('users.create')}}" class="btn btn-success">Add</a>
+                <a href="{{route('users.create')}}" class="btn btn-success">Ajouter</a>
                 <br />
                 <br />
             </div>
             <table class="table table-bordered table-striped">
                 <tr>
-                    <th>First Name</th>
-                    <th>Name</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
                     <th>Email</th>
                     <th>Api_Token</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
                 </tr>
                 @foreach($users as $row)
                     <tr>
