@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index des Entreprises</title>
+	<title>Index des entreprises</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Index des Entreprises</h1>
+    <h1>Index des entreprises</h1>
 
-    <a href="{{ route('entreprises.create') }}" title="Ajouter une entreprise">Ajouter une entreprise</a>
 
-    <ul>
-        @foreach($entreprises as $entreprise)
-        <li>
-            <a href="{{ route('entreprises.show', $entreprise->id) }}" title="{{ $entreprise->Nom }}">{{ $entreprise->Nom }}</a>
-        </li>
-        @endforeach
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-2 offset-10">
+                <a href="{{ route('entreprises.create') }}" class="btn btn-info">Création d'une entreprise</a>
+            </div>
+            <div class="col-2 offset-10">
+                <a href="{{ route('contacts.index') }}" class="btn btn-info">Liste des contacts</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Domaine</th>
+                        <th>Adresse</th>
+                        <th>Numéro</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($entreprises as $entreprises)
+
+                            <tr>
+                                <td><a href="{{ route('entreprises.show', $entreprises->id) }}" title="{{ $entreprises->Nom }}">{{$entreprises['Nom']}} </a></td>
+                                <td>{{$entreprises['Domaine']}}</td>
+                                <td>{{$entreprises['Adresse']}}</td>
+                                <td>{{$entreprises['Numero']}}</td>
+                                <td>
+                                   <a class="btn btn-warning" href="{{ route('entreprises.edit', $entreprises) }}">Modifier</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

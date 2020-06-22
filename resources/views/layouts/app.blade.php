@@ -17,40 +17,67 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<style>
+    img {
+  position: absolute;
+    }
+</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div id="app">
+
+        <nav class="navbar navbar-light" style="background-color: #6cb2eb;">
+
+            <div class="container">
+
+
+
+
+
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <img src="https://img.icons8.com/plasticine/100/000000/beer.png"width="40"/>
+
+                        <ul class="navbar-nav mr-auto">
+
+                        <a class="navbar-brand" href="{{ url('/') }}">
+
+                            AlterBeer
+                        </a>
+
+
+
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                            <span class="navbar-text">
+
+
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+
+
+
+
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+                                <br>
+
+                                       <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+
+
+                            </span>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a href="{{ url('/logout') }}"> logout </a>
+
+                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -66,15 +93,15 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+@endguest
+</ul>
+</div>
+</div>
+</nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+<main class="py-4">
+@yield('content')
+</main>
+</div>
 </body>
 </html>

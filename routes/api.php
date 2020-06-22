@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('apiauth')->group(function (){
+    Route::get('entreprisesapi', 'ApiEntreprisesController@index')->name('api.entreprises.index');
+    Route::get('entreprisesapi/{id}/detail', 'ApiEntreprisesController@detail')->name('api.entreprises.detail');
+    Route::get('entreprisesapi/{id}/user', 'ApiEntreprisesController@user')->name('api.entreprises.user');
 });
+

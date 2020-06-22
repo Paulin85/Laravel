@@ -45,7 +45,8 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 80px;
+
             }
 
             .links > a {
@@ -81,18 +82,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   AlterBeer
                 </div>
+                <h2> -  Application de gestion de demandes de stages en alternance - </h2>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href='/demandes'>Demandes</a>
+                    <a href="/users">Utilisateurs</a>
+                    <a href="/entreprises">Entreprises</a>
+                    <a href="/contacts">Contacts</a>
+                    <a href="api">API</a>
+
                 </div>
             </div>
         </div>
